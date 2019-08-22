@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Review extends Model
 {
+
+	protected $fillable = ['customer','review','star'];
+	protected $guarded = ['id','product_id','created_at','update_at'];
+	protected $table = 'reviews';
     
     public function product ()
     {

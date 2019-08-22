@@ -51,11 +51,9 @@ class ProductController extends Controller
 
         $product->save();
 
-        return response(
-            [
+        return response([
                 'data' => new ProductResource($product)
-            ],
-            Response::HTTP_CREATED);
+            ],Response::HTTP_CREATED);
     }
 
     /**
@@ -68,11 +66,9 @@ class ProductController extends Controller
     {
         if ($product !== null) 
         {
-            return response(
-                [
+            return response([
                     'data' => new ProductResource($product)
-                ],
-                Response::HTTP_OK);
+                ],Response::HTTP_OK);
         } 
         
         return response(null,Response::HTTP_NOT_FOUND);
@@ -95,11 +91,9 @@ class ProductController extends Controller
         
         $product->update($request->all());
         
-        return response(
-            [
+        return response([
                 'data' => new ProductResource($product)
-            ],
-            Response::HTTP_CREATED);
+            ],Response::HTTP_CREATED);
     }
 
     /**
